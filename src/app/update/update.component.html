@@ -1,0 +1,21 @@
+<H1>Order Status</H1>
+
+<div class="container">
+  <!-- <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Enter valid Target Date</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter atleast 5 characters in Description</div>
+   -->
+  <form (ngSubmit)="saveTodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label>Description</label>
+      <select [(ngModel)]="od.status" [ngModelOptions]="{standalone: true}" >
+        <option *ngFor="let st of status"  [value]="st">{{st}}</option>
+        </select>
+      <!-- <input type="text" 
+            [(ngModel)]="od.status" class="form-control" 
+                name="status" required="required" minlength="5"> -->
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>  
+</div>
